@@ -30,6 +30,8 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	private bool possess;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -56,13 +58,18 @@ public class CharacterController2D : MonoBehaviour
 				m_Grounded = true;
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
+				if (colliders[i].gameObject.tag == "Possessable" && possess)
+				{
+					Possess(colliders[i].gameObject);
+				}
 			}
 		}
 	}
 
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool possess)
 	{
+		this.possess = possess;
 		Debug.Log("mfw i am moving");
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -145,5 +152,11 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	private void Possess(GameObject obj)
+	{
+		obj.GetComponent<Possessable>().enabled = true;
+		this.gameObject.SetActive(false);
 	}
 }

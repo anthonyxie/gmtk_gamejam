@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 10f;
     public float dashSpeed = 10f;
     float horizontalMove = 0f;
-    bool jump = false;
-    bool crouch = false;
+    private bool jump = false;
+    private bool crouch = false;
+    private bool possess = false;
     
     
     private Vector2 _currentVelocity;
@@ -52,8 +53,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(_moveAction.ReadValue<float>());
         // Controller.Move(_moveAction.ReadValue<float>() * Time.fixedDeltaTime, _dashAction.IsPressed(), _upAction.IsPressed());
         
-        Controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
+        
         //animator.SetFloat(Speed, Mathf.Abs(direction * moveSpeed));
 
         //transform.position += Vector3.right * (direction * moveSpeed * Time.deltaTime);
@@ -68,6 +68,11 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
+        if (Input.GetButtonDown())
+        {
+            possess = true;
+        }
+
         crouch = false;
         // if (Input.GetButtonDown("Crouch"))
         // {
@@ -76,5 +81,7 @@ public class PlayerController : MonoBehaviour
         // {
         //     crouch = false;
         // }
+        Controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, possess);
+        jump = false;
     }
 }
