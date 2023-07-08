@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
 
     void OnEnable()
     {
-        timeTillRepossess = 0f;
+        timeTillRepossess = 0.5f;
+        possess = false;
     }
 
     // Update is called once per frame

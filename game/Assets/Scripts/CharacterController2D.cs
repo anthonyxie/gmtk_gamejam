@@ -32,6 +32,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public bool possess;
 
+	public Gaming gaming;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -41,6 +43,8 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
+		gaming = FindObjectOfType<Gaming>();
 	}
 
 	private void FixedUpdate()
@@ -62,7 +66,8 @@ public class CharacterController2D : MonoBehaviour
 				{
 					Debug.Log("mfw i posussy2");
 					Possess(colliders[i].gameObject);
-					
+					possess = false;
+
 				}
 			}
 		}
@@ -159,6 +164,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Possess(GameObject obj)
 	{
 		obj.GetComponentInParent<Possessable>().enabled = true;
+		gaming.camFollow.SetAnchor(obj.transform);
 		this.gameObject.SetActive(false);
 	}
 }

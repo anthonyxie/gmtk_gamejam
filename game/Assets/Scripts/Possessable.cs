@@ -51,6 +51,7 @@ public class Possessable : MonoBehaviour
         player.position = platform.transform.position + Vector3.up*0.2f;
         player.gameObject.GetComponent<CharacterController2D>().possess = false;
         player.gameObject.SetActive(true);
+        gaming.camFollow.SetAnchor(player);
         this.enabled = false;
         
     }

@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1098304017}
+  camFollow: {fileID: 1152431861}
 --- !u!1 &696943446
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +579,8 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  possess: 0
+  gaming: {fileID: 0}
 --- !u!50 &1098304015
 Rigidbody2D:
   serializedVersion: 4

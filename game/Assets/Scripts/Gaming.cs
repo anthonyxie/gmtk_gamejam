@@ -6,6 +6,7 @@ public class Gaming : MonoBehaviour
 {
     // Start is called before the first frame update
     public Player player;
+    public Follow camFollow;
     void Start()
     {
     }
