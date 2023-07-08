@@ -30,7 +30,7 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
-	private bool possess;
+	public bool possess;
 
 	private void Awake()
 	{
@@ -58,9 +58,11 @@ public class CharacterController2D : MonoBehaviour
 				m_Grounded = true;
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
-				if (colliders[i].gameObject.tag == "Possessable" && possess)
+				if (colliders[i].gameObject.CompareTag("Possessable") && possess)
 				{
+					Debug.Log("mfw i posussy2");
 					Possess(colliders[i].gameObject);
+					
 				}
 			}
 		}
@@ -156,7 +158,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Possess(GameObject obj)
 	{
-		obj.GetComponent<Possessable>().enabled = true;
+		obj.GetComponentInParent<Possessable>().enabled = true;
 		this.gameObject.SetActive(false);
 	}
 }

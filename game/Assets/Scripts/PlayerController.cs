@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     private bool jump = false;
     private bool crouch = false;
     private bool possess = false;
-    
-    
+    private float timeTillRepossess = 0f;
+
+
     private Vector2 _currentVelocity;
     
     public CharacterController2D Controller;
@@ -47,6 +48,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void OnEnable()
+    {
+        timeTillRepossess = 0f;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -68,9 +74,13 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
-        if (Input.GetButtonDown())
+        if (Input.GetButtonDown("Possess"))
         {
-            possess = true;
+            Debug.Log("mfw i possussy");
+            if (timeTillRepossess < 0f)
+            {
+                possess = true;
+            }
         }
 
         crouch = false;
@@ -83,5 +93,6 @@ public class PlayerController : MonoBehaviour
         // }
         Controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, possess);
         jump = false;
+        timeTillRepossess -= Time.deltaTime;
     }
 }

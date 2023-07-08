@@ -10,6 +10,7 @@ public class Possessable : MonoBehaviour
     public Rigidbody2D platform;
 
     public float speed = 10;
+    private Gaming gaming;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class Possessable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //dummy platform move
+        //dummy platform move 
 
         platform.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
 
@@ -31,15 +32,26 @@ public class Possessable : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
+
+            platform.constraints = RigidbodyConstraints2D.FreezeAll;
             Unpossess();
         }
     }
 
-    void Unpossess()
+    void OnEnable()
     {
-        Transform player = GameObject.FindObjectOfType<PlayerController>().transform;
+        platform.constraints = RigidbodyConstraints2D.FreezeRotation;
+        gaming = FindObjectOfType<Gaming>();
+    }
+
+    private void Unpossess()
+    {
+        Debug.Log("mfw i unpossussy");
+        Transform player = gaming.player.gameObject.transform;
         player.position = platform.transform.position + Vector3.up*0.2f;
+        player.gameObject.GetComponent<CharacterController2D>().possess = false;
         player.gameObject.SetActive(true);
         this.enabled = false;
+        
     }
 }
