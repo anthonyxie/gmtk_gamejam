@@ -23,8 +23,8 @@ public class Possessable : MonoBehaviour
     {
         //dummy platform move 
 
-        platform.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * speed;
-
+        platform.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;
+        
         Vector2 vec = -platform.transform.localPosition;
         float dist = vec.magnitude;
         float fac = Mathf.Clamp(dist - distance, 0, thresh) / thresh;
