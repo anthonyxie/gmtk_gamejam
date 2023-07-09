@@ -24,6 +24,7 @@ public class Gaming : MonoBehaviour
         Debug.Log("mfw I am being forced to unpossussy");
         if (possessed)
         {
+            isPossessing = false;
             possessed.Unpossess();
         }
     }
