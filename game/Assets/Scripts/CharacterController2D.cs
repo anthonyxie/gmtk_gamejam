@@ -110,7 +110,7 @@ public class CharacterController2D : AutoMonoBehaviour
 			if (overlappingCeiling)
 			{
 				crouch = true;
-				if (Input.GetKeyDown(KeyCode.LeftShift) && overlappingCeiling.gameObject.CompareTag("Possessable"))
+				if (overlappingCeiling.gameObject.CompareTag("Possessable"))
 				{
 					
 					Debug.Log("mfw i posussy2");
