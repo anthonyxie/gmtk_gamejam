@@ -884,6 +884,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 628781333}
     m_Modifications:
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[0].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[1].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[2].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[3].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
     - target: {fileID: 8980201031308809878, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
       propertyPath: m_Name
       value: Moveable Plat (2)
@@ -1079,6 +1095,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 628781333}
     m_Modifications:
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[0].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[1].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[2].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[3].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
     - target: {fileID: 8980201031308809878, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
       propertyPath: m_Name
       value: Moveable Plat
@@ -1141,6 +1173,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 628781333}
     m_Modifications:
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[0].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[1].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[2].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020661411022678998, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Tiles.Array.data[3].second.m_AllTileFlags
+      value: 2147483649
+      objectReference: {fileID: 0}
     - target: {fileID: 8980201031308809878, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
       propertyPath: m_Name
       value: Moveable Plat (1)
