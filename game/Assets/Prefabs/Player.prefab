@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863065998997863442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.77, z: 0}
+  m_LocalPosition: {x: 0, y: 0.537, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863066000244615156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.75, z: 0}
+  m_LocalPosition: {x: 0, y: -0.541, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 863066000373927615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.34, y: -1.28, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 863066000244615157}
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a45f8d0145c3f4abd9b3274f06490277, type: 3}
+  m_Sprite: {fileID: -529258250, guid: b189f9841c2734c299ae5a87da2818ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,6 +185,8 @@ MonoBehaviour:
   possess: 0
   gaming: {fileID: 0}
   dying: 0
+  audioSource: {fileID: 0}
+  dieSFX: {fileID: 0}
 --- !u!114 &863066000373927610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +203,8 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   speed: 30
   dashSpeed: 10
+  audioSource: {fileID: 0}
+  jumpSFX: {fileID: 0}
   Controller: {fileID: 863066000373927611}
 --- !u!50 &863066000373927609
 Rigidbody2D:
@@ -252,7 +256,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 1.48}
+    oldSize: {x: 1, y: 1.03125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
