@@ -495,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gaming: {fileID: 0}
   healrate: 0
-  depleterate: 0
+  depleterate: 0.1
   barbg: {fileID: 2900709989881757985}
   bar: {fileID: 4281634327830712054}
   onDeplete:

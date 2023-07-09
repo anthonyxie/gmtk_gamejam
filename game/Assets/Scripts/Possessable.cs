@@ -42,7 +42,7 @@ public class Possessable : MonoBehaviour
         {
             Unpossess();
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Transform player = gaming.player.gameObject.transform;
             Unpossess();
