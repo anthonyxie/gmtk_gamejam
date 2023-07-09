@@ -170,6 +170,7 @@ MonoBehaviour:
   distance: 3
   thresh: 0.5
   platform: {fileID: 1544480062}
+  speed: 10
 --- !u!1 &511647124
 GameObject:
   m_ObjectHideFlags: 0
