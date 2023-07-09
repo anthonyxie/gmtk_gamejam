@@ -186,6 +186,9 @@ MonoBehaviour:
   possess: 0
   gaming: {fileID: 0}
   dying: 0
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
   audioSource: {fileID: 3370388981849068315}
   dieSFX: {fileID: 8300000, guid: 88bf24a9062754396b5f95f5efcde548, type: 3}
 --- !u!114 &863066000373927610
@@ -249,7 +252,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 863066000373927615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b9349e24d99e48c3bc4be14753f5740, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
