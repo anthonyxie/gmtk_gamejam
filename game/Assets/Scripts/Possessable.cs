@@ -11,11 +11,14 @@ public class Possessable : MonoBehaviour
 
     public float speed = 10;
     private Gaming gaming;
+    private Collider2D _collider2D;
+
+    private List<Collider2D> _touchingAbovePlatforms = new List<Collider2D>();
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -43,16 +46,28 @@ public class Possessable : MonoBehaviour
             Unpossess();
             player.GetComponent<Rigidbody2D>().AddForce(inputVelocity * jumpAmount, ForceMode2D.Impulse);
         }
+        
+        
     }
 
     void OnEnable()
     {
         platform.constraints = RigidbodyConstraints2D.FreezeRotation;
         gaming = FindObjectOfType<Gaming>();
+        _collider2D = platform.gameObject.GetComponent<Collider2D>();
+        FindAlLTouchingPlatformsAndUnfreeze();
+
     }
 
     public void Unpossess()
     {
+        foreach (Collider2D collider in _touchingAbovePlatforms)
+        {
+            collider.attachedRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        _touchingAbovePlatforms.Clear();
+            
         platform.constraints = RigidbodyConstraints2D.FreezeAll;
         Debug.Log("mfw i unpossussy");
         Transform player = gaming.player.gameObject.transform;
@@ -71,5 +86,25 @@ public class Possessable : MonoBehaviour
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, distance);
+    }
+
+    public void FindAlLTouchingPlatformsAndUnfreeze()
+    {
+        List<Collider2D> colliders = new List<Collider2D>();
+        _collider2D.GetContacts(colliders);
+        
+        
+        foreach (Collider2D collider in colliders)
+        {
+            float posYOther = collider.gameObject.transform.position.y;
+            float posYThis = _collider2D.gameObject.transform.position.y;
+            
+            if (posYOther > posYThis && collider.gameObject.CompareTag("Possessable"))
+            {
+                _touchingAbovePlatforms.Add(collider);
+                collider.attachedRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+        }
+        
     }
 }
