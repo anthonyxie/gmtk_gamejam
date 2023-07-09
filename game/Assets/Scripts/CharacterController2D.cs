@@ -38,6 +38,7 @@ public class CharacterController2D : AutoMonoBehaviour
 	public bool dead => gaming.isDead;
 	public bool dying;
 	public UnityEvent OnDie;
+	
 
 	public AudioSource audioSource;
 	public AudioClip dieSFX;
@@ -211,6 +212,5 @@ public class CharacterController2D : AutoMonoBehaviour
 		{
 			this.gameObject.SetActive(false);
 		});
-		
 	}
 }
