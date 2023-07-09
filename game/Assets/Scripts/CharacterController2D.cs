@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2D : AutoMonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -34,6 +34,9 @@ public class CharacterController2D : MonoBehaviour
 
 	public Gaming gaming;
 
+	public bool dead => gaming.isDead;
+	public bool dying;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -49,6 +52,17 @@ public class CharacterController2D : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (dead)
+		{
+			if (!dying)
+			{
+				dying = true;
+				m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+				Die();
+			}
+			return;
+		}
+		
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
@@ -79,6 +93,7 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump, bool possess)
 	{
+		if (dead) return;
 		this.possess = possess;
 		Debug.Log("mfw i am moving");
 		// If crouching, check to see if the character can stand up
@@ -179,5 +194,17 @@ public class CharacterController2D : MonoBehaviour
 		obj.GetComponentInParent<Possessable>().enabled = true;
 		gaming.camFollow.SetAnchor(obj.transform);
 		this.gameObject.SetActive(false);
+	}
+
+
+
+	public void Die()
+	{
+		Debug.Log("oh no I fucking died in real life");
+		this.WaitThen(3f, () =>
+		{
+			this.gameObject.SetActive(false);
+		});
+		
 	}
 }

@@ -15,6 +15,8 @@ public class Possessable : MonoBehaviour
 
     private List<Collider2D> _touchingAbovePlatforms = new List<Collider2D>();
 
+    public GameObject spawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +73,7 @@ public class Possessable : MonoBehaviour
         platform.constraints = RigidbodyConstraints2D.FreezeAll;
         Debug.Log("mfw i unpossussy");
         Transform player = gaming.player.gameObject.transform;
-        player.position = platform.transform.position + Vector3.up*0.2f;
+        player.position = spawnPoint.transform.position;
         player.gameObject.GetComponent<CharacterController2D>().possess = false;
         player.gameObject.SetActive(true);
         gaming.camFollow.SetAnchor(player);

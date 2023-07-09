@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Gaming : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class Gaming : MonoBehaviour
     public Follow camFollow;
     public bool isPossessing;
     public Possessable possessed = null;
+
+    public UnityEvent onPickUp;
+    public bool isDead;
     void Start()
     {
     }
@@ -27,5 +32,15 @@ public class Gaming : MonoBehaviour
             isPossessing = false;
             possessed.Unpossess();
         }
+    }
+
+    public void ChangeScene(string pathToScene)
+    {
+        SceneManager.LoadSceneAsync(pathToScene);
+    }
+
+    public void OnPickUp(string id)
+    {
+        onPickUp.Invoke();
     }
 }
