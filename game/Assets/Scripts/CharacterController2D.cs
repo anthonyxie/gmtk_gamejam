@@ -201,7 +201,8 @@ public class CharacterController2D : AutoMonoBehaviour
 	public void Die()
 	{
 		Debug.Log("oh no I fucking died in real life");
-		this.WaitThen(3f, () =>
+		this.GetComponent<Animator>().SetTrigger("die");
+		this.WaitThen(0.75f, () =>
 		{
 			this.gameObject.SetActive(false);
 		});
