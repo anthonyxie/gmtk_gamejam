@@ -7,6 +7,8 @@ public class Gaming : MonoBehaviour
     // Start is called before the first frame update
     public Player player;
     public Follow camFollow;
+    public bool isPossessing;
+    public Possessable possessed = null;
     void Start()
     {
     }
@@ -15,5 +17,14 @@ public class Gaming : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ForceUnpossess()
+    {
+        Debug.Log("mfw I am being forced to unpossussy");
+        if (possessed)
+        {
+            possessed.Unpossess();
+        }
     }
 }

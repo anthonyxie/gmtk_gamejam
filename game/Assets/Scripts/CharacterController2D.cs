@@ -66,7 +66,10 @@ public class CharacterController2D : MonoBehaviour
 				{
 					Debug.Log("mfw i posussy2");
 					Possess(colliders[i].gameObject);
+					gaming.isPossessing = true;
+					gaming.possessed = colliders[i].gameObject.GetComponentInParent<Possessable>();
 					possess = false;
+					
 
 				}
 			}

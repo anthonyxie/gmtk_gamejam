@@ -32,8 +32,6 @@ public class Possessable : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-
-            platform.constraints = RigidbodyConstraints2D.FreezeAll;
             Unpossess();
         }
     }
@@ -44,14 +42,17 @@ public class Possessable : MonoBehaviour
         gaming = FindObjectOfType<Gaming>();
     }
 
-    private void Unpossess()
+    public void Unpossess()
     {
+        platform.constraints = RigidbodyConstraints2D.FreezeAll;
         Debug.Log("mfw i unpossussy");
         Transform player = gaming.player.gameObject.transform;
         player.position = platform.transform.position + Vector3.up*0.2f;
         player.gameObject.GetComponent<CharacterController2D>().possess = false;
         player.gameObject.SetActive(true);
         gaming.camFollow.SetAnchor(player);
+        gaming.isPossessing = false;
+        gaming.possessed = null;
         this.enabled = false;
         
     }
