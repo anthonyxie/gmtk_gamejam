@@ -36,7 +36,10 @@ public class Gaming : MonoBehaviour
 
     public void ChangeScene(string pathToScene)
     {
-        SceneManager.LoadSceneAsync(pathToScene);
+        this.WaitThen(0.9f, () =>
+		{
+            SceneManager.LoadSceneAsync(pathToScene);
+        });
     }
 
     public void OnPickUp(string id)
