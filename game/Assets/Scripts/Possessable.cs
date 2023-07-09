@@ -55,18 +55,18 @@ public class Possessable : MonoBehaviour
         platform.constraints = RigidbodyConstraints2D.FreezeRotation;
         gaming = FindObjectOfType<Gaming>();
         _collider2D = platform.gameObject.GetComponent<Collider2D>();
-        FindAlLTouchingPlatformsAndUnfreeze();
+        //FindAlLTouchingPlatformsAndUnfreeze();
 
     }
 
     public void Unpossess()
     {
-        foreach (Collider2D collider in _touchingAbovePlatforms)
-        {
-            collider.attachedRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-
-        _touchingAbovePlatforms.Clear();
+        // foreach (Collider2D collider in _touchingAbovePlatforms)
+        // {
+        //     collider.attachedRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        // }
+        //
+        // _touchingAbovePlatforms.Clear();
             
         platform.constraints = RigidbodyConstraints2D.FreezeAll;
         Debug.Log("mfw i unpossussy");

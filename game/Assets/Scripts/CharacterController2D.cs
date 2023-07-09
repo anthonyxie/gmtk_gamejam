@@ -85,9 +85,19 @@ public class CharacterController2D : MonoBehaviour
 		if (!crouch)
 		{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
-			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+			Collider2D overlappingCeiling = Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround);
+			if (overlappingCeiling)
 			{
 				crouch = true;
+				if (Input.GetKeyDown(KeyCode.LeftShift) && overlappingCeiling.gameObject.CompareTag("Possessable"))
+				{
+					
+					Debug.Log("mfw i posussy2");
+					Possess(overlappingCeiling.gameObject);
+					gaming.isPossessing = true;
+					gaming.possessed = overlappingCeiling.gameObject.GetComponentInParent<Possessable>();
+					possess = false;
+				}
 			}
 		}
 
