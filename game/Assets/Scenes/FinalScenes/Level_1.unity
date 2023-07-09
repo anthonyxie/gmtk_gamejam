@@ -205,6 +205,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 4944391164493257802, guid: 692994566dd5e470ab730c414b7a22ee, type: 3}
   m_PrefabInstance: {fileID: 89604614}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &89604616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4875183636611718720, guid: 692994566dd5e470ab730c414b7a22ee, type: 3}
+  m_PrefabInstance: {fileID: 89604614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa3a67df17324751aae69e6511f1621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248236417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,7 +2279,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 863066000373927613, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 863066000373927613, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2856,6 +2867,18 @@ PrefabInstance:
     - target: {fileID: 5758457253193496226, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758457253193496236, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
+      propertyPath: onFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 89604616}
+    - target: {fileID: 5758457253193496236, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
+      propertyPath: onFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758457253193496236, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
+      propertyPath: onFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Assets/Scenes/FinalScenes/Level_2.unity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
@@ -4466,7 +4489,7 @@ Tilemap:
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 45, y: -6, z: 0}
@@ -4514,7 +4537,7 @@ Tilemap:
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
