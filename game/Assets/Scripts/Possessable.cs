@@ -55,4 +55,11 @@ public class Possessable : MonoBehaviour
         this.enabled = false;
         
     }
+    
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, distance);
+    }
 }
