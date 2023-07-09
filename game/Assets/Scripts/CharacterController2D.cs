@@ -21,6 +21,7 @@ public class CharacterController2D : AutoMonoBehaviour
 
 	[Header("Events")]
 	[Space]
+	
 
 	public UnityEvent OnLandEvent;
 
@@ -36,6 +37,9 @@ public class CharacterController2D : AutoMonoBehaviour
 
 	public bool dead => gaming.isDead;
 	public bool dying;
+
+	public AudioSource audioSource;
+	public AudioClip dieSFX;
 
 	private void Awake()
 	{
@@ -200,6 +204,7 @@ public class CharacterController2D : AutoMonoBehaviour
 
 	public void Die()
 	{
+		audioSource.PlayOneShot(dieSFX, 0.7f);
 		Debug.Log("oh no I fucking died in real life");
 		this.GetComponent<Animator>().SetTrigger("die");
 		this.WaitThen(0.75f, () =>

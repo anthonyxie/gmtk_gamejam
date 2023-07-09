@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private bool crouch = false;
     private bool possess = false;
     private float timeTillRepossess = 0f;
+    
+    // audio shtuff
+    public AudioSource audioSource;
+    public AudioClip jumpSFX;
 
 
     private Vector2 _currentVelocity;
@@ -73,6 +77,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            audioSource.PlayOneShot(jumpSFX, 0.7f);
         }
 
         if (Input.GetButtonDown("Possess"))
