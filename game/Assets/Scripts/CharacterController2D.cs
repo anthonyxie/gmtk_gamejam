@@ -84,7 +84,7 @@ public class CharacterController2D : AutoMonoBehaviour
 					OnLandEvent.Invoke();
 				if (colliders[i].gameObject.CompareTag("Possessable") && possess)
 				{
-					Debug.Log("mfw i posussy2");
+					//Debug.Log("mfw i posussy2");
 					Possess(colliders[i].gameObject);
 					gaming.isPossessing = true;
 					gaming.possessed = colliders[i].gameObject.GetComponentInParent<Possessable>();
@@ -101,7 +101,7 @@ public class CharacterController2D : AutoMonoBehaviour
 	{
 		if (dead) return;
 		this.possess = possess;
-		Debug.Log("mfw i am moving");
+		//Debug.Log("mfw i am moving");
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
 		{
@@ -113,7 +113,7 @@ public class CharacterController2D : AutoMonoBehaviour
 				if (overlappingCeiling.gameObject.CompareTag("Possessable"))
 				{
 					
-					Debug.Log("mfw i posussy2");
+					//Debug.Log("mfw i posussy2");
 					Possess(overlappingCeiling.gameObject);
 					gaming.isPossessing = true;
 					gaming.possessed = overlappingCeiling.gameObject.GetComponentInParent<Possessable>();
@@ -125,7 +125,7 @@ public class CharacterController2D : AutoMonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-			Debug.Log("mfw i am grounded or aircontrol");
+			//Debug.Log("mfw i am grounded or aircontrol");
 			// If crouching
 			if (crouch)
 			{
@@ -176,7 +176,7 @@ public class CharacterController2D : AutoMonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-			Debug.Log("mfw i jump");
+			//Debug.Log("mfw i jump");
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

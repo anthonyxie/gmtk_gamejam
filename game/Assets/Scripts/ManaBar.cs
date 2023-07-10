@@ -29,7 +29,7 @@ public class ManaBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(shouldDeplete);
+        //Debug.Log(shouldDeplete);
         if (shouldDeplete)
         {
             PERCENT -= depleterate * Time.deltaTime;

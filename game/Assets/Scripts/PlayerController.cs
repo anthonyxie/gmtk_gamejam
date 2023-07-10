@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -82,11 +83,17 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Possess"))
         {
-            Debug.Log("mfw i possussy");
+            //Debug.Log("mfw i possussy");
             if (timeTillRepossess < 0f)
             {
                 possess = true;
             }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("PLS RESTART");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         crouch = false;
