@@ -38,6 +38,7 @@ public class CharacterController2D : AutoMonoBehaviour
 	public bool dead => gaming.isDead;
 	public bool dying;
 	public UnityEvent OnDie;
+	public bool frozen = false;
 	
 
 	public AudioSource audioSource;
@@ -58,17 +59,19 @@ public class CharacterController2D : AutoMonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (frozen)
+		{
+			return;
+		}
+
 		if (dead)
 		{
-			if (!dying)
-			{
-				dying = true;
-				m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-				Die();
-			}
+			Freeze();
+			Die();
 			return;
 		}
 		
+
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
@@ -212,5 +215,17 @@ public class CharacterController2D : AutoMonoBehaviour
 		{
 			this.gameObject.SetActive(false);
 		});
+	}
+
+	public void Freeze()
+	{
+		frozen = true;
+		m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+	}
+
+	public void Finish()
+	{
+		Freeze();
+		this.GetComponent<Animator>().SetTrigger("celebrate_trigger");
 	}
 }

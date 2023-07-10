@@ -24,6 +24,7 @@ public class FinishCollider : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             onFinish.Invoke();
+            other.gameObject.GetComponent<CharacterController2D>().Finish();
         }
     }
 }
