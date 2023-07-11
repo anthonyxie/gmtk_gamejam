@@ -14,7 +14,7 @@ public class ManaBar : MonoBehaviour
     public float depleterate = 0.2f;
 
     public RectTransform barbg;
-    public RectTransform bar;
+    public Image bar;
     float barmaxpx;
 
     public UnityEvent onDeplete;
@@ -47,7 +47,7 @@ public class ManaBar : MonoBehaviour
         {
             PERCENT = 0f;
         }
-        bar.offsetMax = new Vector2(-(1-PERCENT) * barmaxpx, bar.offsetMax.y);
+        bar.fillAmount = PERCENT;
         //bar.offsetMin = new Vector2(percent * barmaxpx, bar.offsetMin.y);
 
         if (PERCENT == 0)
