@@ -211,6 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa3a67df17324751aae69e6511f1621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &179758695 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 324949564091894113, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
+  m_PrefabInstance: {fileID: 523718960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260741214
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +372,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5758457253193496236, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
+      propertyPath: victorySFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9eae04806b7004e158107ebcad905b59, type: 3}
+    - target: {fileID: 5758457253193496236, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 179758695}
     - target: {fileID: 5758457253193496236, guid: 5bda1d952c8d74fbba77cc2252307c75, type: 3}
       propertyPath: onFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2415,7 +2428,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259830987}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e0949a72cbc9347e9bf0abb4f9857f57, type: 3}
@@ -3691,3 +3704,60 @@ MonoBehaviour:
   parallaxFactor: 0.5
   lockY: 1
   lockZ: 1
+--- !u!1001 &5733222410196714225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8167076
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.41562435
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.053341143
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771340878272461663, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662634835140325591, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
+      propertyPath: m_Name
+      value: MusicPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d832f6a5143e4ba3a14ed753473d2d8, type: 3}
