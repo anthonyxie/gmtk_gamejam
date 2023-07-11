@@ -6026,6 +6026,14 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[5].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 8752915103216244291, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Size.x
+      value: 5.9617357
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752915103216244291, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.012867451
+      objectReference: {fileID: 0}
     - target: {fileID: 8980201031308809878, guid: 1d809816c2a2448eeb5d5befb246e59a, type: 3}
       propertyPath: m_Name
       value: Moveable Plat (2)
@@ -8720,7 +8728,7 @@ Tilemap:
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 26, y: 6, z: 0}
