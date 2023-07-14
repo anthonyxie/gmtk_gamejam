@@ -190,14 +190,6 @@ PrefabInstance:
       propertyPath: anchor
       value: 
       objectReference: {fileID: 1381819287}
-    - target: {fileID: 8741694053996748239, guid: 692994566dd5e470ab730c414b7a22ee, type: 3}
-      propertyPath: m_Type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741694053996748239, guid: 692994566dd5e470ab730c414b7a22ee, type: 3}
-      propertyPath: m_FillMethod
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 692994566dd5e470ab730c414b7a22ee, type: 3}
 --- !u!114 &89604615 stripped
@@ -3702,7 +3694,7 @@ Tilemap:
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:

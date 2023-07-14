@@ -39,6 +39,8 @@ public class CharacterController2D : AutoMonoBehaviour
 	public bool dying;
 	public UnityEvent OnDie;
 	public bool frozen = false;
+
+	private GameObject toBePossessed;
 	
 
 	public AudioSource audioSource;
@@ -87,11 +89,17 @@ public class CharacterController2D : AutoMonoBehaviour
 					OnLandEvent.Invoke();
 				if (colliders[i].gameObject.CompareTag("Possessable") && possess)
 				{
-					//Debug.Log("mfw i posussy2");
-					Possess(colliders[i].gameObject);
-					gaming.isPossessing = true;
-					gaming.possessed = colliders[i].gameObject.GetComponentInParent<Possessable>();
-					possess = false;
+					//grounded possess
+					toBePossessed = colliders[i].gameObject;
+					this.GetComponent<Animator>().SetTrigger("possess");
+					
+					this.WaitThen(0.35f, () => {
+						Possess(toBePossessed);
+						gaming.isPossessing = true;
+						gaming.possessed = toBePossessed.GetComponentInParent<Possessable>();
+						possess = false;
+					});
+
 					
 
 				}
@@ -117,10 +125,14 @@ public class CharacterController2D : AutoMonoBehaviour
 				{
 					
 					//Debug.Log("mfw i posussy2");
-					Possess(overlappingCeiling.gameObject);
-					gaming.isPossessing = true;
-					gaming.possessed = overlappingCeiling.gameObject.GetComponentInParent<Possessable>();
-					possess = false;
+					
+					this.WaitThen(0.35f, () => {
+						Possess(overlappingCeiling.gameObject);
+						gaming.isPossessing = true;
+						gaming.possessed = overlappingCeiling.gameObject.GetComponentInParent<Possessable>();
+						possess = false;
+					});
+
 				}
 			}
 		}
