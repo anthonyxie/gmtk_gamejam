@@ -74,11 +74,13 @@ public class Possessable : MonoBehaviour
         Debug.Log("mfw i unpossussy");
         Transform player = gaming.player.gameObject.transform;
         player.position = spawnPoint.transform.position;
+        player.gameObject.GetComponent<CharacterController2D>().Unfreeze();
         player.gameObject.GetComponent<CharacterController2D>().possess = false;
         player.gameObject.SetActive(true);
         gaming.camFollow.SetAnchor(player);
         gaming.isPossessing = false;
         gaming.possessed = null;
+        
         this.enabled = false;
         
     }

@@ -46,6 +46,8 @@ public class CharacterController2D : AutoMonoBehaviour
 	public AudioSource audioSource;
 	public AudioClip dieSFX;
 
+	public float possessionDelay = 0.35f;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -61,6 +63,7 @@ public class CharacterController2D : AutoMonoBehaviour
 
 	private void FixedUpdate()
 	{
+		this.GetComponent<Animator>().SetFloat("velocity", Mathf.Abs(m_Rigidbody2D.velocity.x));
 		if (frozen)
 		{
 			return;
@@ -92,8 +95,8 @@ public class CharacterController2D : AutoMonoBehaviour
 					//grounded possess
 					toBePossessed = colliders[i].gameObject;
 					this.GetComponent<Animator>().SetTrigger("possess");
-					
-					this.WaitThen(0.35f, () => {
+					Freeze();
+					this.WaitThen(possessionDelay, () => {
 						Possess(toBePossessed);
 						gaming.isPossessing = true;
 						gaming.possessed = toBePossessed.GetComponentInParent<Possessable>();
@@ -124,9 +127,9 @@ public class CharacterController2D : AutoMonoBehaviour
 				if (overlappingCeiling.gameObject.CompareTag("Possessable"))
 				{
 					
-					//Debug.Log("mfw i posussy2");
-					
-					this.WaitThen(0.35f, () => {
+					//air possess
+					Freeze();
+					this.WaitThen(possessionDelay, () => {
 						Possess(overlappingCeiling.gameObject);
 						gaming.isPossessing = true;
 						gaming.possessed = overlappingCeiling.gameObject.GetComponentInParent<Possessable>();
@@ -231,8 +234,13 @@ public class CharacterController2D : AutoMonoBehaviour
 
 	public void Freeze()
 	{
-		frozen = true;
 		m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+		frozen = true;
+	}
+	
+	public void Unfreeze() {
+		m_Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+		frozen = false;
 	}
 
 	public void Finish()

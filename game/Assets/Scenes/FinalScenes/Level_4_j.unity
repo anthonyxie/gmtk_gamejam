@@ -12208,37 +12208,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1891405825}
     - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1891405825}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Gaming, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Assets/Scenes/FinalScenes/Level_4_j.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 863066000373927611, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
-      propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 863066000373927613, guid: 4f69f4019551b46e891d3f4c1e832874, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13344,7 +13316,7 @@ Tilemap:
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 38, y: -6, z: 0}
@@ -13512,7 +13484,7 @@ Tilemap:
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
       - {fileID: 1826868122, guid: 52efb247b84684b31acb1b240b8da427, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 52, y: 5, z: 0}

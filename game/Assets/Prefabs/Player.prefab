@@ -188,9 +188,23 @@ MonoBehaviour:
   dying: 0
   OnDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Gaming, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Assets/Scenes/FinalScenes/Level_4_j.unity
+          m_BoolArgument: 0
+        m_CallState: 2
+  frozen: 0
   audioSource: {fileID: 3370388981849068315}
   dieSFX: {fileID: 8300000, guid: 88bf24a9062754396b5f95f5efcde548, type: 3}
+  possessionDelay: 0.1
 --- !u!114 &863066000373927610
 MonoBehaviour:
   m_ObjectHideFlags: 0
